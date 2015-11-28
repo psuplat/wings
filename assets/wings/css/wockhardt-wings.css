@@ -1,0 +1,38 @@
+body
+{
+  background: url(../../../assets/wings/images/wings-background-light.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-form
+{
+  border: 1px solid #fff;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  top:100px;
+}
+
+.master-header
+{
+  background: url(../../../assets/wings/images/logo.png) no-repeat;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  position: relative;
+  background-color: #fff;
+  top:50px;
+  height:60px;
+}
+.master-content
+{
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding:20px;
+  top:50px;
+}
