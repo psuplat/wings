@@ -26,13 +26,54 @@ body
   top:50px;
   height:60px;
 }
+
+.master-menu
+{
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  position: relative;
+  top:50px;
+  border: 0;
+}
+
 .master-content
 {
   border-bottom: 1px solid #fff;
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
   padding:20px;
-  top:50px;
+  top:30px;
+  height: 75vh;
+}
+.kra-percentage{
+    float:left;
+    margin-right:10px;
+}
+.kra-percent-header
+{
+    border: 1px solid #2e6da4;
+    background-color: #337ab7;
+    color: #fff;
+    width:50px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    text-align:center;
+}
+.kra-percent-value
+{
+    border-top: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    width:50px;
+    text-align:center;
+    background-color: #fff;
+}
+.kra-percent-value input
+{
+    border-top: 0;
+    width:48px;
+    text-align: center;
 }

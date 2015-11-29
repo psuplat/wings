@@ -5,9 +5,10 @@ class Login extends CI_Controller {
     public function index()
     {
       //if session variables exist than redirect to home page
-      if ($this->session->session_WINGSAccess && $this->session->session_WINGSAccess == 'alloweds')
+      if ($this->session->session_WINGSAccess && $this->session->session_WINGSAccess == 'allowed')
       {
           //redirect to home page
+          redirect(base_url());
 
       }
       else
