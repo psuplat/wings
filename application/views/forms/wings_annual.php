@@ -392,14 +392,14 @@
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 1</span>
-                                            <input type="text" id="input-kra1-chart" class="form-control annual-percent" value="40" style="text-align: right">
+                                            <input type="text" id="input-kra1-chart" name="input_kra1_split" class="form-control annual-percent" value="40" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 2</span>
-                                            <input type="text" id="input-kra2-chart" class="form-control annual-percent" value="10" style="text-align: right">
+                                            <input type="text" id="input-kra2-chart" name="input_kra2_split"class="form-control annual-percent" value="10" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
@@ -408,14 +408,14 @@
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 3</span>
-                                            <input type="text" id="input-kra3-chart" class="form-control annual-percent" value="10" style="text-align: right">
+                                            <input type="text" id="input-kra3-chart"name="input_kra3_split" class="form-control annual-percent" value="10" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 4</span>
-                                            <input type="text" id="input-kra4-chart" class="form-control annual-percent" value="10" style="text-align: right">
+                                            <input type="text" id="input-kra4-chart" name="input_kra4_split" class="form-control annual-percent" value="10" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
@@ -424,14 +424,14 @@
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 5</span>
-                                            <input type="text" id="input-kra5-chart" class="form-control annual-percent" value="5" style="text-align: right">
+                                            <input type="text" id="input-kra5-chart" name="input_kra5_split" class="form-control annual-percent" value="5" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 6</span>
-                                            <input type="text" id="input-kra6-chart" class="form-control annual-percent" value="5" style="text-align: right">
+                                            <input type="text" id="input-kra6-chart" name="input_kra6_split" class="form-control annual-percent" value="5" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
@@ -440,14 +440,14 @@
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 7</span>
-                                            <input type="text" id="input-kra7-chart" class="form-control annual-percent" value="10" style="text-align: right">
+                                            <input type="text" id="input-kra7-chart" name="input_kra7_split" class="form-control annual-percent" value="10" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="color: #fff;background-color: #5bc0de;border-color: #46b8da;">KRA 8</span>
-                                            <input type="text" id="input-kra8-chart" class="form-control annual-percent" value="10" style="text-align: right">
+                                            <input type="text" id="input-kra8-chart" name="input_kra8_split" class="form-control annual-percent" value="10" style="text-align: right">
                                             <span class="input-group-addon"><i class="fa fa-percent"></i></span>
                                         </div>
                                     </div>
@@ -456,7 +456,7 @@
                                     
                                 </div>
                                 <div class="row" style="margin-top:30px;" id="annual-wings-submit-button">
-                                    <button type="submit" name="annual_submit_review" value="submit" class="btn btn-block btn-primary">Continue <span class="fa fa-arrow-circle-o-right"></span></button>
+                                    <button type="submit" name="annual_submit_review" value="review" class="btn btn-block btn-primary">Continue <span class="fa fa-arrow-circle-o-right"></span></button>
                                 </div>
                             </div>
                         </div>

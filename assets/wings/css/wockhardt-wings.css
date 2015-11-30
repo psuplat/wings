@@ -77,3 +77,8 @@ body
     width:48px;
     text-align: center;
 }
+
+.btn-no-radius
+{
+    border-radius: 0px;
+}

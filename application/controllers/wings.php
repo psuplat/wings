@@ -10,9 +10,17 @@ class Wings extends CI_Controller {
     /** form for inputting new bi-annual wings **/
     public function annual()
     {
-      if($this->input->post('annual_submit_review'))
+      if(!empty($this->input->post('annual_submit_review')) && $this->input->post('annual_submit_review') == 'review')
       {
+          $this->load->model('users_model');
+          $data['supervisor'] = $this->users_model->getSupervisor($this->session->session_userADID);
           $data['main_content'] = 'forms/annual_submit_review'; //load the bi-annual review form view
+      }
+      elseif(!empty($this->input->post('annual_submit_confirm')) && $this->input->post('annual_submit_confirm') == 'submit')
+      {
+          $this->load->model('wings_model');
+          $data['query_results'] = $this->wings_model->startAnnual();
+          $data['main_content'] = 'forms/annual_submit_save'; //load the bi-annual review form view
       }
       else 
       {

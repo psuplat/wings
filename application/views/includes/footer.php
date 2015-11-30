@@ -2,6 +2,7 @@
 <script src="<?= base_url(); ?>assets/third-party/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?= base_url(); ?>assets/third-party/charts_js/Chart.min.js"></script>
 <script src="<?= base_url(); ?>assets/third-party/malihu_scroller/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="<?= base_url(); ?>assets/third-party/tablesorter/jquery.tablesorter.min.js"></script>
 
 <script>
 //apply the scroll bar plugin to 
@@ -374,7 +375,129 @@
            $("#annual-wings-submit-button").show();
         }
     });
+//on annual wings confirmation page if draft checkbox is ticked change submit button style and text
+    $('#input_draft').change(function() {
+        if($(this).is(":checked")) {
+            $("#btn_annual_submit").removeClass("btn-primary");
+            $("#btn_annual_submit").addClass("btn-info");
+            $("#btn_annual_submit").html('<span class="fa fa-file-o"></span> Save as draft');
+        }
+        else
+        {
+            $("#btn_annual_submit").removeClass("btn-info");
+            $("#btn_annual_submit").addClass("btn-primary");
+            $("#btn_annual_submit").html('<span class="fa fa-envelope-o"></span> Submit for review');
+        }
+    });
 
+//inbox buttons control, each button load a specific CI view to content div
+$('#btn-inbox-active').click(function(){
+    $('#container-active').show();
+    $('#container-drafts').hide();
+    $('#container-completed').hide();
+    $('#container-team').hide();
+    $('#container-pending').hide();
+    $('#container-trash').hide();
+});
+$('#btn-inbox-drafts').click(function(){
+    $('#container-active').hide();
+    $('#container-drafts').show();
+    $('#container-completed').hide();
+    $('#container-team').hide();
+    $('#container-pending').hide();
+    $('#container-trash').hide();
+});
+$('#btn-inbox-completed').click(function(){
+    $('#container-active').hide();
+    $('#container-drafts').hide();
+    $('#container-completed').show();
+    $('#container-team').hide();
+    $('#container-pending').hide();
+    $('#container-trash').hide();
+});
+$('#btn-inbox-team').click(function(){
+    $('#container-active').hide();
+    $('#container-drafts').hide();
+    $('#container-completed').hide();
+    $('#container-team').show();
+    $('#container-pending').hide();
+    $('#container-trash').hide();
+});    
+$('#btn-inbox-pending').click(function(){
+    $('#container-active').hide();
+    $('#container-drafts').hide();
+    $('#container-completed').hide();
+    $('#container-team').hide();
+    $('#container-pending').show();
+    $('#container-trash').hide();
+});
+$('#btn-inbox-trash').click(function(){
+    $('#container-active').hide();
+    $('#container-drafts').hide();
+    $('#container-completed').hide();
+    $('#container-team').hide();
+    $('#container-pending').hide();
+    $('#container-trash').show();
+});
+
+//inbox move all selected items to trash
+$('#btn-active-trash').click(function(){
+    var trashArray = {};
+    $("input:checkbox[class=tick-inbox-active]:checked").each(function () {
+            trashArray[$(this).attr('id')] =  $(this).attr('id');
+        });
+    if(JSON.stringify(trashArray) === "{}")
+    {
+        $('#button-responses').html('<span class="text-danger"><i class="fa fa-exclamation-circle"></i> You need to select at least one item</span>');
+    }
+    else
+    {
+        $('#button-responses').html('');
+    }
+});
+
+//inbox open details modal
+$('#btn-active-details').click(function(){
+    var detailsArray = {};
+    $("input:checkbox[class=tick-inbox-active]:checked").each(function () {
+            detailsArray[$(this).attr('id')] =  $(this).attr('id');
+        });
+    var elements = Object.keys(detailsArray).length;
+    if(elements > 1)
+    {
+        $('#button-responses').html('<span class="text-danger"><i class="fa fa-exclamation-circle"></i> You can view the details of only one item at a time</span>');
+    }
+    else if(elements < 1)
+    {
+        $('#button-responses').html('<span class="text-info"><i class="fa fa-exclamation-circle"></i> Select one item</span>');
+    }
+    else
+    {
+        $('#button-responses').html('');
+    }
+});
+
+//inbox open actions modal
+$('#btn-active-action').click(function(){
+    var actionArray = {};
+    $("input:checkbox[class=tick-inbox-active]:checked").each(function () {
+            actionArray[$(this).attr('id')] =  $(this).attr('id');
+        });
+    var elements = Object.keys(actionArray).length;
+    if(elements > 1)
+    {
+        $('#button-responses').html('<span class="text-danger"><i class="fa fa-exclamation-circle"></i> You can action only one item at a time</span>');
+    }
+    else if(elements < 1)
+    {
+        $('#button-responses').html('<span class="text-info"><i class="fa fa-exclamation-circle"></i> Select one item</span>');
+    }
+    else
+    {
+        $('#button-responses').html('');
+    }
+});
+    
 //things to do when document is ready
 $(document).ready(function(){
   
@@ -383,7 +506,9 @@ $(document).ready(function(){
   {
       drawDohoughtChartAnnualWINGS();
   }
-        
+  
+  //enable tablesorter plugin on tables
+  $("#inbox-active-table").tablesorter();
   
   
 });
